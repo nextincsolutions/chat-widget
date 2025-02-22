@@ -3,10 +3,10 @@
     // Create and inject styles
     const styles = `
         .zion-chat-widget {
-            --chat--color-primary: var(--n8n-chat-primary-color, #854fff);
-            --chat--color-secondary: var(--n8n-chat-secondary-color, #6b3fd4);
-            --chat--color-background: var(--n8n-chat-background-color, #ffffff);
-            --chat--color-font: var(--n8n-chat-font-color, #333333);
+            --chat--color-primary: var(--Zion-chat-primary-color, #854fff);
+            --chat--color-secondary: var(--Zion-chat-secondary-color, #6b3fd4);
+            --chat--color-background: var(--Zion-chat-background-color, #ffffff);
+            --chat--color-font: var(--Zion-chat-font-color, #333333);
             font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -318,8 +318,8 @@
         } : defaultConfig;
 
     // Prevent multiple initializations
-    if (window.N8NChatWidgetInitialized) return;
-    window.N8NChatWidgetInitialized = true;
+    if (window.ZionChatWidgetInitialized) return;
+    window.ZionChatWidgetInitialized = true;
 
     let currentSessionId = '';
 
@@ -328,10 +328,10 @@
     widgetContainer.className = 'zion-chat-widget';
     
     // Set CSS variables for colors
-    widgetContainer.style.setProperty('--n8n-chat-primary-color', config.style.primaryColor);
-    widgetContainer.style.setProperty('--n8n-chat-secondary-color', config.style.secondaryColor);
-    widgetContainer.style.setProperty('--n8n-chat-background-color', config.style.backgroundColor);
-    widgetContainer.style.setProperty('--n8n-chat-font-color', config.style.fontColor);
+    widgetContainer.style.setProperty('--Zion-chat-primary-color', config.style.primaryColor);
+    widgetContainer.style.setProperty('--Zion-chat-secondary-color', config.style.secondaryColor);
+    widgetContainer.style.setProperty('--Zion-chat-background-color', config.style.backgroundColor);
+    widgetContainer.style.setProperty('--Zion-chat-font-color', config.style.fontColor);
 
     const chatContainer = document.createElement('div');
     chatContainer.className = `chat-container${config.style.position === 'left' ? ' position-left' : ''}`;
